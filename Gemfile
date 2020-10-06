@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+gem "mere-blog-theme"
 source "https://rubygems.org"
 gemspec
 
