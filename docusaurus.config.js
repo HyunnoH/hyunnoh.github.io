@@ -23,6 +23,7 @@ const config = {
       "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
+        docs: false,
         // docs: {
         //   sidebarPath: require.resolve("./sidebars.js"),
         //   // Please change this to your repo.
