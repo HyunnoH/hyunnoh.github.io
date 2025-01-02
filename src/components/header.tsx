@@ -16,10 +16,19 @@ const headerMenu = css`
   gap: 16px;
 `;
 
+const logo = css`
+  color: black;
+  text-decoration: none;
+`;
+
 export function Header() {
   return (
     <header css={headerStyle}>
-      <div>HyunnoH.github.io</div>
+      <div>
+        <Link to="/" css={logo}>
+          <strong>HyunnoH.github.io</strong>
+        </Link>
+      </div>
       <div>
         <menu css={headerMenu}>
           <li>
