@@ -1,6 +1,7 @@
 import { HeadFC, PageProps } from "gatsby";
 import { Layout } from "../components/layout";
 import React from "react";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { css } from "@emotion/react";
 import myPic from "../images/1735821869641-21.jpg";
 
@@ -8,8 +9,9 @@ const pageStyles = css`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 96px;
   font-family: -apple-system, Roboto, sans-serif, serif;
+  width: 1600px;
+  margin: 0 auto;
 
   h2 {
     text-decoration: underline;
@@ -26,6 +28,40 @@ const profilePicture = css`
   height: 300px;
 `;
 
+const linkBox = css`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .link-item {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+  }
+`;
+
+const iconBox = css`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #232129;
+  font-size: 16px;
+  width: 24px;
+  height: 24px;
+`;
+
+const links = [
+  {
+    icon: <FaLinkedin />,
+    to: "https://www.linkedin.com/in/hyunnoh01",
+  },
+  {
+    icon: <FaGithub />,
+    to: "https://github.com/HyunnoH",
+  },
+];
+
 const AboutPage: React.FC<PageProps> = () => {
   return (
     <Layout>
@@ -35,7 +71,14 @@ const AboutPage: React.FC<PageProps> = () => {
           <img src={myPic} alt="profile" css={profilePicture} />
           <div>
             <p>재밌게 살고 싶은 개발자 오현입니다.</p>
-            <div>Links</div>
+            <div css={linkBox}>
+              {links.map(({ icon, to }) => (
+                <div className="link-item">
+                  <span css={iconBox}>{icon}</span>
+                  <a href={to}>{to}</a>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
         <section>

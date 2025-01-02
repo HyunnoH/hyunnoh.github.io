@@ -1,7 +1,5 @@
 import * as React from "react";
 import type { HeadFC, PageProps } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
-import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { Layout } from "../components/layout";
 import { css } from "@emotion/react";
 
@@ -31,30 +29,11 @@ const iconBox = css`
   height: 48px;
 `;
 
-const links = [
-  {
-    icon: <FaLinkedin />,
-    to: "https://www.linkedin.com/in/hyunnoh01",
-    tooltip: "LinkedIn",
-  },
-  {
-    icon: <FaGithub />,
-    to: "https://github.com/HyunnoH",
-    tooltip: "GitHub",
-  },
-];
-
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <Layout>
       <main css={pageStyles}>
-        <div css={linkBox}>
-          {links.map(({ icon, to, tooltip }) => (
-            <a href={to}>
-              <div css={iconBox}>{icon}</div>
-            </a>
-          ))}
-        </div>
+        <div css={linkBox}></div>
       </main>
     </Layout>
   );
